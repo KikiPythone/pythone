@@ -3,7 +3,7 @@
 Декоратор, который будет ограничивать количество вызовов функций.
 # Описание
 Создала декеоратор, который огарничивает количество вызовов и замыкание, которое отбирает только уникальные значения из переданных
-Решение 
+# Решение 
 ``` python
 def limit_calls(max_calls):
     def decorator(func):
@@ -28,11 +28,13 @@ print(unique_values_limited([4, 5, 5, 6]))
 print(unique_values_limited([7, 8, 9]))     
 print(unique_values_limited([1, 2, 3]))     
 #print(unique_values_limited([1, 2, 3]))
-```
+``` 
 # Скриншот
 ![image](https://github.com/user-attachments/assets/77ab2833-2a70-468a-b6ca-a020f22a351f)
 
 # Список литературы
 [Уникальное значение](https://sky.pro/media/poluchenie-unikalnyh-znachenij-iz-spiska-v-python/)
+
 [Декоратор](https://habr.com/ru/companies/otus/articles/727590/)
+
 [Замыкание](https://habr.com/ru/articles/781866/)
