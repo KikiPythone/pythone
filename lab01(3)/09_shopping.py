@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Есть словарь магазинов с распродажами
-
+# Исходный словарь магазинов с распродажами
 shops = {
     'ашан':
         [
@@ -24,15 +23,30 @@ shops = {
             {'name': 'конфеты', 'price': 30.99},
             {'name': 'карамель', 'price': 41.99},
             {'name': 'пирожное', 'price': 62.99}
-        ],
+        ]
 }
 
-# Создайте словарь цен на продкты следующего вида (писать прямо в коде)
-sweets = {
-    'название сладости': [
-        {'shop': 'название магазина', 'price': 99.99},
-        # TODO тут с клавиатуры введите магазины и цены (можно копипастить ;)
-    ],
-    # TODO тут с клавиатуры введите другую сладость и далее словарь магазинов
-}
-# Указать надо только по 2 магазина с минимальными ценами
+# Новый словарь, куда будем записывать найденные минимумы
+sweets = {}
+
+# Перебираем продукты в магазине "Ашан"
+for product in shops['ашан']:
+    product_name = product['name']
+    
+    # Получаем список цен продукта во всех магазинах
+    prices_by_shop = [(shop, item['price']) for shop, items in shops.items() for item in items if item['name'] == product_name]
+    
+    # Сортируем список по цене
+    sorted_prices = sorted(prices_by_shop, key=lambda x: x[1])
+    
+    # Берем первые два наиболее дешевых варианта
+    top_two_shops = sorted_prices[:2]
+    
+    # Записываем в итоговый словарь
+    sweets[product_name] = top_two_shops
+
+# Печать результатов
+for sweet, data in sweets.items():
+    print(f"{sweet}:")
+    for entry in data:
+        print(f"\tМагазин: {entry[0]}, Цена: {entry[1]} руб.")
