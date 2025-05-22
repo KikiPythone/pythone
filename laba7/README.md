@@ -9,7 +9,7 @@ managed - атрибуты,
 
 
 ## Скриншот
-
+![image](https://github.com/user-attachments/assets/ae6091a3-20f7-49bf-b896-831e1618437b)
 
 ## Список литературы
 [chatgpt](https://chatgpt.com/?)
